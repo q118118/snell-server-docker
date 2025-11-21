@@ -32,9 +32,19 @@ if [ -z ${PORT} ]; then
     PORT=9102
 fi
 
+if [ -z ${DNS} ]; then
+    DNS=9.9.9.9,1.1.1.1
+fi
+
+if [ -z ${IPV6} ]; then
+    IPV6=false
+fi
+
 echo "Generating new config..."
 echo "[snell-server]" >>${CONF}
 echo "listen = :::${PORT}" >>${CONF}
 echo "psk = ${PSK}" >>${CONF}
+echo "ipv6 = ${IPV6}" >>${CONF}
+echo "dns = ${DNS}" >>${CONF}
 
 run_bin
