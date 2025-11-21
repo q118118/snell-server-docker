@@ -29,7 +29,15 @@ else
 fi
 
 if [ -z ${PORT} ]; then
-    PORT=9102
+    PORT=8443
+fi
+
+if [ -z ${OBFS} ]; then
+    OBFS=off
+fi
+
+if [ -z ${OTF} ]; then
+    OTF=false
 fi
 
 if [ -z ${DNS} ]; then
@@ -44,6 +52,8 @@ echo "Generating new config..."
 echo "[snell-server]" >>${CONF}
 echo "listen = :::${PORT}" >>${CONF}
 echo "psk = ${PSK}" >>${CONF}
+echo "obfs = ${OBFS}" >>${CONF}
+echo "tfo = ${TFO}" >>${CONF}
 echo "ipv6 = ${IPV6}" >>${CONF}
 echo "dns = ${DNS}" >>${CONF}
 
