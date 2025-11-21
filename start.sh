@@ -30,22 +30,36 @@ fi
 
 if [ -z ${PORT} ]; then
     PORT=8443
+    echo "Using default PORT: ${PORT}"
+else
+    echo "Using predefined PORT: ${PORT}"
 fi
 
 if [ -z ${OBFS} ]; then
     OBFS=off
+    echo "Using default OBFS: ${OBFS}"
+else
+    echo "Using predefined OBFS: ${OBFS}"
 fi
 
 if [ -z ${OTF} ]; then
     OTF=false
+    echo "Using default OTF: ${OTF}"
+else
+    echo "Using predefined OTF: ${OTF}"
 fi
 
 if [ -z ${DNS} ]; then
     DNS=9.9.9.9,1.1.1.1
+    echo "Using default DNS: ${DNS}"
+else
+    echo "Using predefined DNS: ${DNS}"
 fi
 
 if [ -z ${IPV6} ]; then
     IPV6=false
+else
+    echo "Using predefined IPV6: ${IPV6}"
 fi
 
 echo "Generating new config..."
