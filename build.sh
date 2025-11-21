@@ -79,7 +79,7 @@ extract_major_version() {
 }
 
 MAJOR_VERSION=$(extract_major_version "$VERSION")
-IMAGE_NAME="geekdada/snell-server"
+IMAGE_NAME="q118118/snell-server"
 
 print_info "开始构建 Docker 镜像..."
 print_info "版本号: $VERSION"
